@@ -92,7 +92,7 @@ pipeline {
                     // Ansible playbook kullanarak deploy
                     sh '''
                     cd ansible/
-                    ansible-playbook playbook.yaml -i inventory
+                    ansible-playbook -i /home/ec2-user/Jenkins-Project/inventory_aws_ec2.yml playbook.yaml
                     '''
                 }
             }
