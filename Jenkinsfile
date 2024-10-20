@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         AWS_REGION = 'us-east-1'
+        AWS_ACCOUNT_ID = '767397694961'
         ECR_REPO_NAME1 = 'jenkins-nodejs-image'
         ECR_REPO_NAME2 = 'jenkins-postgresql-image'
         ECR_REPO_NAME3 = 'jenkins-react-image'
