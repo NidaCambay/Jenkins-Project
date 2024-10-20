@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     // App1 için Docker image oluşturma ve ECR'a gönderme
-                    dir('app1') { // App1 dosyalarının bulunduğu klasör
+                    dir('nodejs') { // App1 dosyalarının bulunduğu klasör
                         sh '''
                         docker build -t ${ECR_REPO_NAME1}:${DOCKER_IMAGE_TAG} .
                         docker tag ${ECR_REPO_NAME1}:${DOCKER_IMAGE_TAG} ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO_NAME1}:${DOCKER_IMAGE_TAG}
@@ -52,7 +52,7 @@ pipeline {
             steps {
                 script {
                     // App2 için Docker image oluşturma ve ECR'a gönderme
-                    dir('app2') { // App2 dosyalarının bulunduğu klasör
+                    dir('postgresql') { // App2 dosyalarının bulunduğu klasör
                         sh '''
                         docker build -t ${ECR_REPO_NAME2}:${DOCKER_IMAGE_TAG} .
                         docker tag ${ECR_REPO_NAME2}:${DOCKER_IMAGE_TAG} ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO_NAME2}:${DOCKER_IMAGE_TAG}
@@ -67,7 +67,7 @@ pipeline {
             steps {
                 script {
                     // App3 için Docker image oluşturma ve ECR'a gönderme
-                    dir('app3') { // App3 dosyalarının bulunduğu klasör
+                    dir('react') { // App3 dosyalarının bulunduğu klasör
                         sh '''
                         docker build -t ${ECR_REPO_NAME3}:${DOCKER_IMAGE_TAG} .
                         docker tag ${ECR_REPO_NAME3}:${DOCKER_IMAGE_TAG} ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO_NAME3}:${DOCKER_IMAGE_TAG}
