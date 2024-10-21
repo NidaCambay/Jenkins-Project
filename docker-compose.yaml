@@ -32,7 +32,7 @@ services:
     image: public.ecr.aws/j3o8b4k0/jenkins-react-image:latest
     container_name: todo_frontend
     environment:
-      REACT_APP_BASE_URL: http://100.28.216.69:5000/
+      REACT_APP_BASE_URL: http://3.227.1.247:5000/
     ports:
       - 3000:3000
     depends_on:
